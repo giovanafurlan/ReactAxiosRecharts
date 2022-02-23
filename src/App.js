@@ -81,7 +81,7 @@ function App() {
 
 const axios = require('axios');
 
-const token= "APP_USR-8685824602582630-022213-c3977160568b3b0cb6adb9aace3e3d4b-398092563";
+const token= "APP_USR-8685824602582630-022313-3ae270f8be2bdddb9bdcbca13fed0f7f-398092563";
 function send() {
 
   axios.get('https://api.mercadolibre.com/users/'+ document.getElementById("searchTerm").value, {
@@ -89,6 +89,11 @@ function send() {
   })
   .then(function (response) {
     console.log(response.data);
+    const nickname= response.data.nickname;
+    document.getElementById("nickname_id").textContent= nickname;
+
+    const id= response.data.id;
+    document.getElementById("id_id").textContent= id;
   })
   .catch(function (error) {
     console.error(error);
@@ -111,11 +116,11 @@ function send() {
             <Text fontSize='md' mt="1vw">User</Text>
             <Box>                
               <Text as='u' fontSize='md' noOfLines={1} mt="1vw">Nickname:</Text>
-              <Text fontSize='md' noOfLines={1}></Text>
+              <Text fontSize='md' noOfLines={1} id="nickname_id"></Text>
             </Box>
             <Box>
               <Text as='u' fontSize='md' noOfLines={1} mt="1vw">User ID:</Text>
-              <Text fontSize='md' noOfLines={1}></Text>
+              <Text fontSize='md' noOfLines={1} id="id"></Text>
             </Box>
             <Box>
               <Text as='u' fontSize='md' noOfLines={1} mt="1vw">Permalink: </Text>
