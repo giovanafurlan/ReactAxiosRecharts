@@ -12,6 +12,7 @@
     "api": "^4.2.0",
     "axios": "^0.26.0",
     "bootstrap-icons": "^1.8.1",
+    "dateformat": "^5.0.3",
     "framer-motion": "^6.2.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
